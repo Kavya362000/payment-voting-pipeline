@@ -87,12 +87,7 @@ jobs:
         with:
           version: v1.29.0
 
-       # Setup kubeconfig
-      - name: Configure kubeconfig
-        run: |
-          mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBE_CONFIG }}" | base64 -d > $HOME/.kube/config
-          export KUBECONFIG=$HOME/.kube/config
+       
 
           
       # Deploy to Kubernetes
