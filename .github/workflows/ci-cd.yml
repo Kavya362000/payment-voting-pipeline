@@ -29,9 +29,11 @@ jobs:
 
       - name: Build Project
         run: mvn clean install
+        working-directory: payment-service
 
       - name: Run Tests
         run: mvn test
+        working-directory: payment-service
 
 
 # =======================
