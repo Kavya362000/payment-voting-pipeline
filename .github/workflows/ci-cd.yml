@@ -38,6 +38,9 @@ jobs:
       - name: Verify JAR created
         run: ls -R payment-service/target
 
+      - name: Build Docker image
+        run: docker build -t payment-service:latest payment-service
+
 
 # =======================
 # CD: Docker + ECR + Deploy
