@@ -38,8 +38,6 @@ jobs:
       - name: Verify JAR created
         run: ls -R payment-service/target
 
-      - name: Build Docker image
-        run: docker build -t payment-service:latest payment-service
 
 
 # =======================
@@ -69,8 +67,7 @@ jobs:
 
       # Build Docker image
       - name: Build Docker Image
-        run: |
-          docker build -t $ECR_REPOSITORY:$IMAGE_TAG payment-service
+        run: docker build -t $ECR_REPOSITORY:$IMAGE_TAG payment-service
           
 
       # Tag image
