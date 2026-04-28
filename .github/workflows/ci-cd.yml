@@ -28,12 +28,15 @@ jobs:
           distribution: 'temurin'
 
       - name: Build JAR
-        run: mvn clean package
-        working-directory: payment-service
+        run: cd payment-service && mvn clean package
+        
 
       - name: Run Tests
         run: mvn test
         working-directory: payment-service
+
+      - name: Verify JAR created
+        run: ls -R payment-service/target
 
 
 # =======================
