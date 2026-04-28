@@ -99,6 +99,6 @@ jobs:
           kubectl apply -f kubernetes/
 
           kubectl set image deployment/payment \
-          payment-service=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
+          payment=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
 
           kubectl rollout status deployment/payment
