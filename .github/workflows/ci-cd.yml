@@ -28,7 +28,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Build Project
-        run: mvn clean install
+        run: mvn clean package
         working-directory: payment-service
 
       - name: Run Tests
